@@ -1,0 +1,400 @@
+:root {
+  --ml-font: 'Helvetica Neue', Helvetica, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+
+/* ————————————————————————— theme palettes —————————————————————————
+   All tokens referenced from theme.ts. The dark palette keeps MTA line colours and
+   scene art untouched and re-maps surfaces, text and tints. */
+
+.ml-inner {
+  color-scheme: light;
+
+  --ml-brand: #1264e3;
+  --ml-brand-dark: #0b4dc0;
+  --ml-brand-tint: #eff4fe;
+  --ml-brand-tint2: #e7f0fe;
+  --ml-brand-faint: #f7f9fe;
+
+  --ml-ink: #101318;
+  --ml-ink2: #0b0d10;
+  --ml-body: #344054;
+  --ml-muted: #475467;
+  --ml-soft: #667085;
+  --ml-faint: #98a2b3;
+  --ml-line: #e4e7ec;
+  --ml-line2: #f0f1f4;
+  --ml-line3: #f2f3f5;
+  --ml-hair: #eef0f3;
+
+  --ml-bg: #f3f4f6;
+  --ml-bg-alt: #f7f8fa;
+  --ml-surface: #ffffff;
+  --ml-toggle-off: #d6dae0;
+
+  --ml-green: #12b76a;
+  --ml-green-deep: #0e8345;
+  --ml-green-deeper: #0e6b39;
+  --ml-green-tint: #e7f6ee;
+
+  --ml-amber: #f79009;
+  --ml-amber-deep: #b54708;
+  --ml-amber-deeper: #93370d;
+  --ml-amber-ink: #93540b;
+  --ml-amber-tint: #fef0c7;
+  --ml-amber-bg: #fffbeb;
+  --ml-amber-bg2: #fff7ed;
+
+  --ml-red: #d92d20;
+  --ml-red-deep: #b42318;
+  --ml-red-deeper: #912018;
+  --ml-red-tint: #fee4e2;
+  --ml-red-bg: #fef0ef;
+  --ml-red-bg2: #fef3f2;
+
+  --ml-tab-off: #9aa0aa;
+  --ml-row-hi: #f8faff;
+  --ml-seg: #e7e9ee;
+  --ml-idle: #e7eaef;
+  --ml-dot: #c6cbd2;
+  --ml-track: #e2e5ea;
+  --ml-tabbar: rgba(255, 255, 255, 0.96);
+  --ml-tabbar-line: rgba(16, 19, 24, 0.07);
+
+  --ml-sh-card: 0 2px 10px rgba(16, 19, 24, 0.06);
+  --ml-sh-card-up: 0 2px 12px rgba(16, 19, 24, 0.08);
+  --ml-sh-chip: 0 1px 2px rgba(16, 19, 24, 0.05);
+  --ml-sh-raise: 0 2px 8px rgba(16, 19, 24, 0.07);
+  --ml-sh-focus: 0 3px 12px rgba(18, 100, 227, 0.14);
+  --ml-sh-sheet: 0 -2px 16px rgba(16, 19, 24, 0.1);
+}
+
+.ml-inner.ml-dark {
+  color-scheme: dark;
+
+  --ml-brand: #4d8df7;
+  --ml-brand-dark: #6ba1f9;
+  --ml-brand-tint: #16263f;
+  --ml-brand-tint2: #182c4c;
+  --ml-brand-faint: #131b29;
+
+  --ml-ink: #f2f4f8;
+  --ml-ink2: #05070a;
+  --ml-body: #c7cdd8;
+  --ml-muted: #aab2c0;
+  --ml-soft: #8a93a3;
+  --ml-faint: #6b7484;
+  --ml-line: #2a303a;
+  --ml-line2: #232933;
+  --ml-line3: #232933;
+  --ml-hair: #262c36;
+
+  --ml-bg: #0f1216;
+  --ml-bg-alt: #171b21;
+  --ml-surface: #1a1f26;
+  --ml-toggle-off: #3a414e;
+
+  --ml-green: #26c281;
+  --ml-green-deep: #0e8345;
+  --ml-green-deeper: #55d095;
+  --ml-green-tint: #10281c;
+
+  --ml-amber: #f7a83c;
+  --ml-amber-deep: #e08a3c;
+  --ml-amber-deeper: #f4b06a;
+  --ml-amber-ink: #e8b079;
+  --ml-amber-tint: #3a2a12;
+  --ml-amber-bg: #241d0d;
+  --ml-amber-bg2: #201709;
+
+  --ml-red: #ef5350;
+  --ml-red-deep: #f07572;
+  --ml-red-deeper: #f49290;
+  --ml-red-tint: #3a1614;
+  --ml-red-bg: #2a110e;
+  --ml-red-bg2: #20100c;
+
+  --ml-tab-off: #6b7484;
+  --ml-row-hi: #17202e;
+  --ml-seg: #232933;
+  --ml-idle: #2a303a;
+  --ml-dot: #3a414e;
+  --ml-track: #2a303a;
+  --ml-tabbar: rgba(20, 24, 30, 0.96);
+  --ml-tabbar-line: rgba(255, 255, 255, 0.08);
+
+  --ml-sh-card: 0 2px 10px rgba(0, 0, 0, 0.35);
+  --ml-sh-card-up: 0 2px 12px rgba(0, 0, 0, 0.4);
+  --ml-sh-chip: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --ml-sh-raise: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --ml-sh-focus: 0 3px 12px rgba(77, 141, 247, 0.25);
+  --ml-sh-sheet: 0 -2px 16px rgba(0, 0, 0, 0.45);
+}
+
+body.ml-page-dark {
+  background: #0a0c0f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e8e9ed;
+  font-family: var(--ml-font);
+  color: #101318;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: #1264e3;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0b4dc0;
+}
+
+@keyframes ml-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes ml-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(18, 183, 106, 0.55);
+  }
+  100% {
+    box-shadow: 0 0 0 14px rgba(18, 183, 106, 0);
+  }
+}
+
+@keyframes ml-caret {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  55%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes ml-dot {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Transform-only: background tabs throttle animations, and an opacity fade can be
+   frozen half-transparent there. A pure translate can only freeze slightly offset. */
+@keyframes ml-slide-up {
+  from {
+    transform: translateY(8px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes ml-fade-up {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ————————————————————————— device frame ————————————————————————— */
+
+.ml-frame {
+  width: 393px;
+  height: 852px;
+  background: #050505;
+  border-radius: 56px;
+  padding: 9px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+  flex: none;
+  font-family: var(--ml-font);
+  color: #101318;
+}
+
+.ml-inner {
+  position: relative;
+  height: 834px;
+  border-radius: 47px;
+  overflow: hidden;
+  background: var(--ml-bg);
+  color: var(--ml-ink);
+  display: flex;
+  flex-direction: column;
+  transition: background 0.25s ease;
+}
+
+.ml-notch {
+  position: absolute;
+  left: 50%;
+  top: 9px;
+  transform: translateX(-50%);
+  width: 118px;
+  height: 32px;
+  border-radius: 18px;
+  background: #050505;
+}
+
+/* On a real phone, drop the bezel and fill the viewport. */
+@media (max-width: 440px), (max-height: 900px) and (max-width: 700px) {
+  body {
+    padding: 0;
+    align-items: stretch;
+  }
+  .ml-frame {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+  .ml-inner {
+    height: 100%;
+    border-radius: 0;
+  }
+  .ml-notch {
+    display: none;
+  }
+}
+
+.ml-screen {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: var(--ml-bg);
+  overflow: hidden;
+}
+
+/* Screens slide in; persistent chrome (tab bar, I'm Lost, toast) must not re-animate. */
+.ml-screen > *:not(nav):not(.ml-chrome) {
+  animation: ml-slide-up 0.22s ease both;
+}
+
+/* Large-text mode: everything grows, and the rider scrolls more — same as the OS setting. */
+.ml-large .ml-screen {
+  zoom: 1.14;
+}
+
+/* ————————————————————————— scrolling ————————————————————————— */
+
+/* Children of a vertical scroll column must never flex-shrink: cards that set
+   overflow:hidden (for rounded corners) otherwise collapse to zero height once the
+   column overflows. */
+.ml-vscroll > * {
+  flex-shrink: 0;
+}
+
+.ml-hscroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+  /* A scroll container's automatic minimum size is 0 — without this the row collapses
+     inside an overflowing flex column. */
+  flex: none;
+}
+
+.ml-hscroll > * {
+  flex: none;
+}
+
+.ml-hscroll::-webkit-scrollbar {
+  display: none;
+}
+
+.ml-screen ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.ml-screen * {
+  scrollbar-width: none;
+}
+
+/* ————————————————————————— misc ————————————————————————— */
+
+.ml-toast {
+  animation: ml-fade-up 0.2s ease both;
+  position: absolute;
+  left: 50%;
+  bottom: 96px;
+  transform: translateX(-50%);
+  background: rgba(16, 19, 24, 0.92);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 999px;
+  z-index: 30;
+  white-space: nowrap;
+}
+
+.ml-reset-input {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  width: 100%;
+  padding: 0;
+}
+
+.ml-tap {
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ml-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

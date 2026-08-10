@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/live/:path*", "destination": "https://demo.transiter.dev/:path*" },
+    { "source": "/mta/:path*", "destination": "https://api-endpoints.mta.info/:path*" }
+  ]
+}

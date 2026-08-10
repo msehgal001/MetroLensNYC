@@ -1,0 +1,2 @@
+/live/*  https://demo.transiter.dev/:splat  200
+/mta/*   https://api-endpoints.mta.info/:splat  200
